@@ -12,7 +12,7 @@
                 <div class="row">
                     @foreach (App\Models\Food::where('category_id',$category->id)->get() as $food )
                         
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-3 col-sm-3 text-center">
                         <img src="{{asset('images')}}\{{$food->image}}" class="rounded mx-auto d-block" alt="" width="220" height="200">
                         <p class="text-primary">{{$food->name}}
                             <br><span class="text-danger">$ {{$food->price}}</span>
