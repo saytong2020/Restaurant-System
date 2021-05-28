@@ -12,13 +12,14 @@
                 <div class="row">
                     @foreach (App\Models\Food::where('category_id',$category->id)->get() as $food )
                         
-                    <div class="col-md-3 col-sm-3 text-center">
+                    <div class="col-lg-3 col-md-6 text-center">
                         <img src="{{asset('images')}}\{{$food->image}}" class="rounded mx-auto d-block" alt="" width="220" height="200">
                         <p class="text-primary">{{$food->name}}
                             <br><span class="text-danger">$ {{$food->price}}</span>
                         </p>
                         <p>
-                            <a href="">Veiw</a>
+                            <a href="{{route('food.view',[$food->id])}}">
+                               <button class="btn btn-outline-danger ">Veiw</button> </a>
                         </p>
 
                     </div>

@@ -25,3 +25,4 @@ Route::resource('/category', CategoryController::class)->middleware('auth');
 Route::resource('/food', FoodController::class)->middleware('auth');
 
 Route::get('/', [App\Http\Controllers\FoodController::class, 'ListFood']);
+Route::get('/foods/{id}', [App\Http\Controllers\FoodController::class, 'view'])->name('food.view');
